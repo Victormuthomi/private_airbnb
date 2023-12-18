@@ -1,0 +1,28 @@
+<!--templates/airbnb.html-->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div style="margin-bottom: 20px;">
+    <h1 style="font-size: 3em; margin-bottom: 10px; color: #3a6186;">Airbnbs</h1>
+    <p style="line-height: 1.8; font-size: 22px;">Enjoy this executive 3 bedroom fully furnished apartment (Airbnb)</p>
+    <ul>
+        {% for  airbnb in all_airbnbs_list %}
+        <li style="margin-bottom: 20px;">
+            <h3 style="font-size: 2.5em; margin-bottom: 10px; color: #3a6186;">{{ airbnb.name }}</h3>
+            {% for image in airbnb.images.all %}
+            <img src="{{ image.image.url }}" alt="{{ airbnb.name }}" style="width: 100%; max-width: 300px;">
+            {% endfor %}
+            <p style="line-height: 1.8; font-size: 22px;"><strong>Location:</strong> {{ airbnb.location }}</p>
+            <p style="line-height: 1.8; font-size: 22px;"><strong>Rooms:</strong> {{ airbnb.rooms }}</p>
+            <p style="line-height: 1.8; font-size: 22px;"><strong>Price:</strong> Ksh. {{airbnb.price }}</p>
+            <p style="line-height: 1.8; font-size: 22px;"><strong>Availability:</strong> {% if airbnb.avalability %}Available{% else %}Not available{% endif %}</p>
+            <p style="line-height: 1.8; font-size: 22px;"><strong>Services:</strong> {{ airbnb.services }}</p>
+            <p style="line-height: 1.8; font-size: 22px;">{% if airbnb.avalability %}<a style="display: inline-block; background-color: #3a6186; color: 
+            white; padding: 12px 24px; margin-top: 10px; border-radius: 5px; text-decoration: none; transition: background-color 0.3s ease; font-size: 22px;" 
+            href="{% url 'airbnb_customer_form' %}">Book now</a>{% else %}The Airbnb is already booked. Please try another one{% endif %}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock content %}
