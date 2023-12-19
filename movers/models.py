@@ -7,8 +7,7 @@ class Service(models.Model):
     name = models.CharField(max_length=50)
     available_areas = models.TextField(default='kisumu')
     
-    context_object_name ='all_services_list'
-     
+
     def __str__(self):
         """Show the service name"""
         return self.name
@@ -30,6 +29,15 @@ class Customer(models.Model):
         """Show the cusomers name"""
         return 'Booking no ' + str(self.booking_id) + ' user ' + self.name + ' booking ' + str(self.service) + ' on '  + self.date.strftime('%d %B %Y %H:%M')
     
+class OtherServices(models.Model):
+    """Define the other services the company offers"""
+    name = models.CharField(max_length=50)
+    template_name = 'home.html'
+    context_object_name ='all_services_list'
+
+    def __str__(self):
+        return self.name
+
 
         
 

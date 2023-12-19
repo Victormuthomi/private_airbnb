@@ -5,25 +5,21 @@
 {% block content %}
 <div style="margin-bottom: 20px;">
     <h1 style="font-size: 2.5em; margin-bottom: 10px; color: #3a6186;">Airbnb</h1>
-    <p style="line-height: 1.8; font-size: 20px;">Are you travelling to the lakeside city, Kisumu and in need of accommodation? The search is over. 
-        Enjoy this executive 3 bedroom fully furnished apartment (Airbnb) in Milimani Estate. Studio Apartments 1,2,3,4 to 5 bedroom units available.</p>
+    <p style="line-height: 1.8; font-size: 20px;">Embark on an unforgettable journey in Kisumu! Nestled in the tranquil Milimani Estate, 
+        our fully furnished apartments are your perfect lakeside retreat. From intimate studios (Airbnbs) to expansive 5-bedroom units, 
+        we cater to all. Dive into your Kisumu adventure and let us take care of the rest!</p>
     <p><a style="display: inline-block; background-color: #3a6186; color: white; padding: 10px 20px; margin-top: 10px; border-radius: 5px; 
     text-decoration: none; transition: background-color 0.3s ease; font-size: 20px;" href="{% url 'airbnb' %}">Check the Airbnbs</a></p>
 </div>
 
 <div style="margin-bottom: 20px;">
     <h1 style="font-size: 2.5em; margin-bottom: 10px; color: #3a6186;">Moving Soon?</h1>
-    <p style="line-height: 1.8; font-size: 20px;">We offer quality Mover services for you. Our services include:</p>
-    <ul>
-        {% for service in all_services_list %}
-          <li style="font-size: 20px;">{{ service.name }}</li>
-        {% endfor %}
-    </ul>
-    <p style="line-height: 1.8; font-size: 20px;">Our team handles your goods with care ensuring safety and reliability always. 
-        Talk to us today and get a quotation for FREE. Call: 0768305216 or book a service using the link below.</p>
+    <p style="line-height: 1.8; font-size: 20px;">Explore our diverse range of moving services! Click the link below to find the perfect fit for your needs</p>
     <p><a style="display: inline-block; background-color: #3a6186; color: white; padding: 10px 20px; margin-top: 10px; border-radius: 5px; 
-    text-decoration: none; transition: background-color 0.3s ease; font-size: 20px;" href="{% url 'movers_service' %}">Book Movers Service</a></p>
+    text-decoration: none; transition: background-color 0.3s ease; font-size: 20px;" href="{% url 'movers_service' %}">Movers Services</a></p>
 </div>
+
+
 
 <style>
     @media only screen and (max-width: 600px) {
