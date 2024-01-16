@@ -1,6 +1,6 @@
 from django.urls import path 
 
-from .views import AirbnbListView, HomeListView, CustomerListView, customer_create_view, BookedListView
+from .views import AirbnbListView, HomeListView, CustomerListView, customer_create_view, BookedListView, OtherServicesListView
 
 urlpatterns =[
     path('', HomeListView.as_view(), name ='home'),
@@ -8,6 +8,7 @@ urlpatterns =[
     path('airbnb_customer/', CustomerListView.as_view(), name = 'airbnb_customer'),
     path('airbnb_customer_form/', customer_create_view, name = 'airbnb_customer_form'),
     path('booked/', BookedListView.as_view(), name='booked'),
+    path('otherservices/', OtherServicesListView.as_view(), name = 'otherservices'),
 
 
 ]

@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 
 from django.views.generic import ListView, TemplateView
 
-from .models import Airbnb,Customer
+from .models import Airbnb,Customer, OtherServices
 
 from .forms import CustomerForm
 
@@ -42,4 +42,9 @@ def customer_create_view(request):
 
     return render(request, 'airbnb_customer_form.html', {'form': form})
 
+
+class OtherServicesListView(ListView):
+    """Define the model and the template to use for the list view"""
+    model = OtherServices
+    template_name = 'otherservices.html'
 

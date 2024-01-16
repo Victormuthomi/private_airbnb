@@ -39,6 +39,15 @@ class Customer(models.Model):
           """Print the name of the customer"""
           return  'booking number ' + str(self.booking_id) + ' user ' + self.name + ' booking airbnb ' + str(self.airbnb) + ' on ' + self.date.strftime('%d %B %Y %H:%M')
 
+class OtherServices(models.Model):
+     """define the fields for the other services"""
+     name = models.CharField(max_length=20)
+     avalability = models.BooleanField(default = True)
+     booking_id = models.AutoField(primary_key=True)
+
+     def __str__(self):
+          return self.name
+
 
           
 
