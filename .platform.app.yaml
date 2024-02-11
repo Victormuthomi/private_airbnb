@@ -1,5 +1,5 @@
 name: "airbnb_project"
-type: "python:3"
+type: "python:3.10.12"
 
 relationships:
     database: "db:postgresql"
