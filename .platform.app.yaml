@@ -9,7 +9,7 @@ web:
     upstream:
         socket_family: unix
     commands:
-        start: "gunicorn -w 4 -b unix:/tmp/app.sock airbnb_project.wsgi:application"
+        start: "pipenv run gunicorn -w 4 -b unix:/tmp/app.sock airbnb_project.wsgi:application"
     locations:
         "/":
             passthru: true
@@ -31,10 +31,10 @@ mounts:
 hooks:
     build: |
         pip install pipenv  # Install pipenv
-        pipenv install --system --deploy  # Install dependencies from Pipfile
+        pipenv install --deploy  # Install dependencies from Pipfile
         
         mkdir logs
-        python manage.py collectstatic
+        pipenv run python manage.py collectstatic
         rm -rf logs
     deploy: |
-        python manage.py migrate
+        pipenv run python manage.py migrate
