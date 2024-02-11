@@ -38,4 +38,5 @@ hooks:
         python manage.py collectstatic
         rm -rf logs
     deploy: |
+      pipenv shell
         python manage.py migrate
