@@ -33,3 +33,4 @@ def m_customer_create_view(request):
     return render(request, 'movers_customer_form.html', {'form' : form})
 
 
+

@@ -1,3 +1,5 @@
 #requirement for a live project
-gunicorn
-psycopg2
+# requirements.txt
+uWSGI
+pg8000
+
