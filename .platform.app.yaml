@@ -8,10 +8,8 @@ relationships:
 web:
     upstream:
         socket_family: unix
-    web:
     commands:
         start: "gunicorn -w 4 -b unix:/tmp/app.sock airbnb_project.wsgi:application"
-
     locations:
         "/":
             passthru: true
