@@ -1,11 +1,12 @@
 from django.contrib import admin
 
-from .models import Airbnb, Customer,  Airbnbimage, OtherServices
+from .models import Airbnb, Customer,  Airbnbimage, OtherServicesBooking, OtherService
 
 # Register your models here.
 
 admin.site.register(Airbnb)
 admin.site.register(Customer)
 admin.site.register(Airbnbimage)
-admin.site.register(OtherServices)
+admin.site.register(OtherServicesBooking)
+admin.site.register(OtherService)
 

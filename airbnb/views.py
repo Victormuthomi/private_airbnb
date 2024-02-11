@@ -2,9 +2,9 @@ from django.shortcuts import render, redirect
 
 from django.views.generic import ListView, TemplateView
 
-from .models import Airbnb,Customer, OtherServices
+from .models import Airbnb,Customer, OtherService
 
-from .forms import CustomerForm
+from .forms import CustomerForm, OtherServicesForm
 
 # Create your views here.
 
@@ -44,7 +44,20 @@ def customer_create_view(request):
 
 
 class OtherServicesListView(ListView):
-    """Define the model and the template to use for the list view"""
-    model = OtherServices
+    """Define the model and temlate to use for the customers"""
+    model = OtherService
     template_name = 'otherservices.html'
+    context_object_name = 'all_services_list'
 
+
+def s_customer_create_view(request):
+    if request.method == 'POST':
+        form = OtherServicesForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('booked')
+           
+    else:
+        form = OtherServicesForm()
+
+    return render(request, 'otherservices_form.html', {'form': form})

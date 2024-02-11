@@ -1,11 +1,12 @@
 <!--templates/airbnb.html-->
 {% extends 'base.html' %}
 {% load static %}
+{% load humanize %}
 
 {% block content %}
 <div style="margin-bottom: 20px;">
     <h1 style="font-size: 3em; margin-bottom: 10px; color: #3a6186;">Airbnbs</h1>
-    <p style="line-height: 1.8; font-size: 22px;">Enjoy this executive 3 bedroom fully furnished apartment (Airbnb)</p>
+    <p style="line-height: 1.8; font-size: 22px;">Enjoy this executive fully furnished apartments (Airbnbs)</p>
     <ul>
         {% for airbnb in all_airbnbs_list %}
         <li style="margin-bottom: 20px;">
@@ -15,7 +16,7 @@
             {% endfor %}
             <p style="line-height: 1.8; font-size: 22px;"><strong>Location:</strong> {{ airbnb.location }}</p>
             <p style="line-height: 1.8; font-size: 22px;"><strong>Rooms:</strong> {{ airbnb.rooms }}</p>
-            <p style="line-height: 1.8; font-size: 22px;"><strong>Price:</strong> Ksh. {{airbnb.price }}</p>
+            <p style="line-height: 1.8; font-size: 22px;"><strong>Price:</strong> Ksh. {{airbnb.price|intcomma }}</p>
             <p style="line-height: 1.8; font-size: 22px;"><strong>Availability:</strong> {% if airbnb.avalability %}Available{% else %}Not available{% endif %}</p>
             <p style="line-height: 1.8; font-size: 22px;"><strong>Services:</strong> {{ airbnb.services }}</p>
             <p style="line-height: 1.8; font-size: 22px;">{% if airbnb.avalability %}<a style="display: inline-block; background-color: #3a6186; color: 

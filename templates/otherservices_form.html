@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div style="margin-bottom: 20px;">
+    <h1 style="font-size: 3em; margin-bottom: 0px; color: #3a6186;">Service Booking Form</h1> <!-- Adjusted margin-bottom to 0px -->
+    <form method="POST" style="font-size: 22px;">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <style>
+            input[type="text"], textarea, input[type="email"] {
+                font-size: 24px; /* Adjust this value as needed */
+            }
+        </style>
+        <input type="submit" value="Book now" style="display: inline-block; 
+        background-color: #3a6186; color: white; padding: 12px 24px; margin-top: 10px; border-radius: 5px; 
+        text-decoration: none; transition: background-color 0.3s ease; font-size: 22px;">
+    </form>
+</div>
+{% endblock content %}
