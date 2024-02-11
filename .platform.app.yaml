@@ -30,13 +30,11 @@ mounts:
 # The hooks executed at various points in the lifecycle of the application.
 hooks:
     build: |
-        pip install --upgrade pip
-        pip install -r requirements.txt
-        pip install -r requirements_remote.txt
+        pip install pipenv  # Install pipenv
+        pipenv install --system --deploy  # Install dependencies from Pipfile
         
         mkdir logs
         python manage.py collectstatic
         rm -rf logs
     deploy: |
-        pipenv shell
         python manage.py migrate
