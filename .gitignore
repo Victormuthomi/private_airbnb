@@ -1,0 +1,3 @@
+airbnb_private/
+__pycache__
+*.sqllite3
