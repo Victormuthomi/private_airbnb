@@ -1,4 +1,4 @@
-name: "airbnb_project"
+name: "airbnb_private"
 type: "python:3.10"
 
 relationships:
@@ -8,7 +8,7 @@ web:
     upstream:
         socket_family: unix
     commands:
-        start: pipenv run gunicorn -w 4 -b unix:/tmp/airbnb_project.sock airbnb_project.wsgi:application
+        start: pipenv run gunicorn -w 4 -b unix:/tmp/airbnb_private.sock airbnb_private.wsgi:application
 
     locations:
         "/":

@@ -2,7 +2,7 @@
 
 "https://{default}/":
     type: upstream
-    upstream: "airbnb_project:http"
+    upstream: "airbnb_private:http"
 
 "https://www.{default}/":
     type: redirect
