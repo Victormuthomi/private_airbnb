@@ -44,7 +44,7 @@ def customer_create_view(request):
 
 
 class OtherServicesListView(ListView):
-    Define the model and temlate to use for the customers
+    """Define the model and temlate to use for the customers"""
     model = OtherService
     template_name = 'otherservices.html'
     context_object_name = 'all_services_list'

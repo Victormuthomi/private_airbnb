@@ -6,8 +6,6 @@ name = "pypi"
 [packages]
 django = "*"
 Pillow = "*"
-uwsgi = "*"
-pg8000 = "*"
 
 [dev-packages]
 

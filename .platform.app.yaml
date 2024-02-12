@@ -1,15 +1,13 @@
-name: "airbnb_project"
 type: "python:3.10"
 
 relationships:
     database: "db:postgresql"
 
-# The configuration of the app when it's exposed to the web.
 web:
     upstream:
         socket_family: unix
     commands:
-        start: uwsgi --http-socket /run/app.sock --wsgi-file airbnb_project/wsgi.py --master --processes 4 --threads 2
+        start: pipenv run gunicorn -w 4 -b unix:/run/app.sock airbnb_project.wsgi:application
 
     locations:
         "/":
@@ -19,16 +17,13 @@ web:
             expires: 1h
             allow: true
 
-# The size of the persistent disk of the application (in MB).
 disk: 512
 
-# Set a local read/write mount for logs.
 mounts:
     "logs":
         source: local
         source_path: logs
 
-# The hooks executed at various points in the lifecycle of the application.
 hooks:
     build: |
         pip install pipenv  # Install pipenv
@@ -39,3 +34,4 @@ hooks:
         rm -rf logs
     deploy: |
         pipenv run python manage.py migrate
+
