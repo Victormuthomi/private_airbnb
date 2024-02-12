@@ -29,6 +29,7 @@ hooks:
     build: |
         pip install pipenv  # Install pipenv
         pipenv install --deploy  # Install dependencies from Pipfile
+        pipenv shell 
         
         mkdir logs
         pipenv run python manage.py collectstatic
