@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'airbnb_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DBASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 DATABASES = {
     'default': {
@@ -164,8 +164,8 @@ if config.is_valid_platform():
     ALLOWED_HOSTS.append('.platformsh.site')
     DEBUG = True
 
-    if config.appDir:
-        STATIC_ROOT = Path(config.appDir) / 'static'
+   if config.appDir:
+       STATIC_ROOT = Path(config.appDir) / 'static'
     if config.projectEntropy:
         SECRET_KEY = config.projectEntropy
 
