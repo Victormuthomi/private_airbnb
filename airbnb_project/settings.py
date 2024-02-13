@@ -166,7 +166,8 @@ if config.is_valid_platform():
     DEBUG = False
 
     if config.appDir:
-       STATIC_ROOT = Path(config.appDir) / 'static'
+        STATIC_ROOT = Path(config.appDir) / 'staticfiles'
+
     if config.projectEntropy:
         SECRET_KEY = config.projectEntropy
 
