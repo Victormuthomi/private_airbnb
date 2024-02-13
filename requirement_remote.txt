@@ -1,5 +1,0 @@
-#requirement for a live project
-# requirements.txt
-uWSGI
-pg8000
-
