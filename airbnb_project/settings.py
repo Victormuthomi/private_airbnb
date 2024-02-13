@@ -151,9 +151,9 @@ MEDIA_ROOT = os.path.join(settings.BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 #static files
+#static files
 STATICFILES_DIRS=[os.path.join(BASE_DIR, 'static')]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 # Platform.sh settings.
