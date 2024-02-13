@@ -162,9 +162,9 @@ from platformshconfig import Config
 config = Config()
 if config.is_valid_platform():
     ALLOWED_HOSTS.append('.platformsh.site')
-    DEBUG = True
+    DEBUG = False
 
-   if config.appDir:
+    if config.appDir:
        STATIC_ROOT = Path(config.appDir) / 'static'
     if config.projectEntropy:
         SECRET_KEY = config.projectEntropy
