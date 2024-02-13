@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 django = "*"
 Pillow = "*"
+dj-database-url = "*"
 
 [dev-packages]
 
