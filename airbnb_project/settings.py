@@ -153,6 +153,7 @@ MEDIA_URL = '/media/'
 #static files
 #static files
 STATICFILES_DIRS=[os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 
 
@@ -164,8 +165,8 @@ if config.is_valid_platform():
     ALLOWED_HOSTS.append('.platformsh.site')
     DEBUG = False
 
-    #if config.appDir:
-       #STATIC_ROOT = Path(config.appDir) / 'static'
+    if config.appDir:
+       STATIC_ROOT = Path(config.appDir) / 'static'
     if config.projectEntropy:
         SECRET_KEY = config.projectEntropy
 
