@@ -1,3 +1,4 @@
 # Requirements for live project.
 gunicorn
 psycopg2
+whitenoise==5.3.0
