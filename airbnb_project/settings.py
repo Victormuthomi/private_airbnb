@@ -153,7 +153,9 @@ from django.conf import settings
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/var/www/example.com/media/"
 # settings.py
-MEDIA_ROOT = os.path.join(BASE_DIR, 'tmp/')
+# settings.py
+MEDIA_ROOT = '/tmp'
+
 
 
 # URL that handles the media served from MEDIA_ROOT. Use a trailing slash.
