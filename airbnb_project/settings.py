@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    #'whitenoise.runserver_nostatic',
+    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     'airbnb.apps.AirbnbConfig', #new
@@ -51,7 +51,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    #'whitenoise.middleware.WhiteNoiseMiddleware', # new!
+    'whitenoise.middleware.WhiteNoiseMiddleware', # new!
     'django.middleware.common.CommonMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
