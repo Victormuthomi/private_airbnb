@@ -155,9 +155,9 @@ MEDIA_URL = '/media/'
 
 #static files
 #static files
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') # new!
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') # new!
+#STATIC_URL = '/static/'
+#STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 #STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
@@ -170,7 +170,7 @@ if config.is_valid_platform():
     DEBUG = True
 
     if config.appDir:
-        STATIC_ROOT = Path(config.appDir) / 'staticfiles'
+        STATIC_ROOT = Path(config.appDir) / 'static' / 'staticfiles'  # Change this line
 
     if config.projectEntropy:
         SECRET_KEY = config.projectEntropy
