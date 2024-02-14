@@ -36,7 +36,6 @@ hooks:
         python manage.py collectstatic --noinput
         
         mkdir logs
-        python manage.py collectstatic
         rm -rf logs
     deploy: |
         python manage.py migrate
