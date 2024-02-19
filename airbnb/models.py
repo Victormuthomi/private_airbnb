@@ -61,8 +61,21 @@ class OtherServicesBooking(models.Model):
         """Show the cusomers name"""
         return 'Booking no ' + str(self.booking_id) + ' user ' + self.name + ' booking ' + str(self.service_name) + ' on '  + self.date.strftime('%d %B %Y %H:%M')
     
+class HomepageImages(models.Model):
+    """Define the fields for homepage images"""
+    PURPOSE_CHOICES = [
+        ('airbnb', 'Airbnb Image'),
+        ('mover', 'Mover Image'),
+        # Add more choices here as needed
+    ]
 
-          
+    image = models.ImageField(upload_to='images/', default='default.jpeg')
+    purpose = models.CharField(max_length=20, choices=PURPOSE_CHOICES, default='airbnb')
+
+    def __str__(self):
+        """Print the purpose of the image being uploaded"""
+        return self.get_purpose_display()
+
 
      
 

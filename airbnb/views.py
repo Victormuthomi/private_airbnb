@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 
-from django.views.generic import ListView, TemplateView
+from django.views.generic import ListView, TemplateView, DetailView
 
-from .models import Airbnb,Customer, OtherService
+from .models import Airbnb,Customer, OtherService, HomepageImages
 
 from .forms import CustomerForm, OtherServicesForm
 
@@ -61,3 +61,12 @@ def s_customer_create_view(request):
         form = OtherServicesForm()
 
     return render(request, 'otherservices_form.html', {'form': form})
+
+
+def home(request):
+    images = HomepageImages.objects.all()
+    return render(request, 'home.html', {'images': images})
+
+class AirbnbDetailView(DetailView):
+    model = Airbnb
+    template_name = 'airbnb.html'

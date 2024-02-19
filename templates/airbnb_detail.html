@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+<div class="container my-5">
+    <h1 class="display-4 text-center mb-4">{{ airbnb.name }}</h1>
+
+    <!-- Images -->
+    {% for image in airbnb.images.all %}
+    <img class="img-fluid mb-4" src="{{ image.image.url }}" alt="{{ airbnb.name }}">
+    {% endfor %}
+
+    <!-- Details -->
+    <p class="lead">
+        <strong>Location:</strong> {{ airbnb.location }}<br>
+        <strong>Rooms:</strong> {{ airbnb.rooms }}<br>
+        <strong>Price:</strong> Ksh. {{airbnb.price|intcomma }}<br>
+        <strong>Availability:</strong> {% if airbnb.avalability %}Available{% else %}Not available{% endif %}<br>
+        <strong>Services:</strong> {{ airbnb.services }}
+    </p>
+
+    <!-- Booking button -->
+    {% if airbnb.avalability %}
+    <a href="{% url 'airbnb_booking' airbnb.id %}" class="btn btn-primary">Book Now</a>
+    {% else %}
+    <p>The Airbnb is already booked. Please try another one.</p>
+    {% endif %}
+</div>
+{% endblock content %}

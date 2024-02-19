@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'airbnb.apps.AirbnbConfig', #new
     'movers.apps.MoversConfig',
+
+    'django_bootstrap5' #third party app
     
 ]
 
