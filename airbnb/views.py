@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 
+from django.shortcuts import get_object_or_404
+
 from django.views.generic import ListView, TemplateView, DetailView
 
 from .models import Airbnb,Customer, OtherService, HomepageImages
@@ -30,17 +32,19 @@ class CustomerListView(ListView):
     model = Customer 
     template_name = 'airbnb_customer.html'
 
-def customer_create_view(request):
+
+def customer_create_view(request, airbnb_id=None):
     if request.method == 'POST':
         form = CustomerForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('booked')
-           
     else:
-        form = CustomerForm()
+        airbnb = get_object_or_404(Airbnb, id=airbnb_id) if airbnb_id else None
+        form = CustomerForm(initial={'airbnb': airbnb})
 
-    return render(request, 'airbnb_customer_form.html', {'form': form})
+    return render(request, 'airbnb_customer_form.html', {'form': form, 'airbnb': airbnb})
+
 
 
 class OtherServicesListView(ListView):
@@ -69,4 +73,4 @@ def home(request):
 
 class AirbnbDetailView(DetailView):
     model = Airbnb
-    template_name = 'airbnb.html'
+    template_name = 'airbnb_detail.html'

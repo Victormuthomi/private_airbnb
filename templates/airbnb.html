@@ -29,13 +29,13 @@
     </form>
 
     <!-- Listings -->
-    <div class="row">
+    <div class="row flex-row flex-nowrap overflow-auto">
         {% for airbnb in all_airbnbs_list %}
-        <div class="col-md-4">
+        <div class="col-4">
             <div class="card mb-4">
-                {% for image in airbnb.images.all %}
-                <img class="card-img-top" src="{{ image.image.url }}" alt="{{ airbnb.name }}">
-                {% endfor %}
+                {% if airbnb.images.all %}
+                <img class="card-img-top" src="{{ airbnb.images.all.0.image.url }}" alt="{{ airbnb.name }}">
+                {% endif %}
                     {% if airbnb.avalability %}
                     <a href="{% url 'airbnb_detail' airbnb.id %}" class="btn btn-primary">View Details</a>
                     {% else %}
@@ -43,7 +43,6 @@
                     {% endif %}
                 </div>
             </div>
-        </div>
         {% endfor %}
     </div>
 </div>

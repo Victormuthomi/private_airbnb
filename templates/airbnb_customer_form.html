@@ -6,7 +6,24 @@
     <h1 style="font-size: 3em; margin-bottom: 0px; color: #3a6186;">Airbnb Booking Form</h1>
     <form method="POST" style="font-size: 22px;">
         {% csrf_token %}
-        {{ form.as_p }}
+        {% for field in form %}
+            <p>
+            {% if field.name == 'airbnb' %}
+                {{ field.label_tag }}
+                <select name="{{ field.name }}">
+                    {% for choice in field.field.choices %}
+                        {% if choice.0 == airbnb.id %}
+                            <option value="{{ choice.0 }}" selected>{{ choice.1 }}</option>
+                        {% else %}
+                            <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+            {% else %}
+                {{ field.label_tag }} {{ field }}
+            {% endif %}
+            </p>
+        {% endfor %}
         <style>
             input[type="text"], textarea, input[type="email"], input[type="tel"] {
                 font-size: 24px; /* Adjust this value as needed */

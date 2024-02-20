@@ -31,8 +31,10 @@ class Customer(models.Model):
      name = models.CharField(max_length=20)
      email = models.EmailField()
      phone_number = models.PositiveBigIntegerField()
+     Id_number = models.PositiveBigIntegerField()
      booking_id= models.AutoField(primary_key=True)
      airbnb = models.ForeignKey(Airbnb, on_delete=models.CASCADE)
+     Mpesa_code = models.CharField(max_length=20)
      date = models.DateTimeField(auto_now=True)
 
      def __str__(self):
