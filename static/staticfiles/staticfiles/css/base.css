@@ -1,0 +1,23 @@
+<!--templates/home.html-->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div style="margin-bottom: 20px;">
+    <h1 style="font-size: 2.5em; margin-bottom: 10px;">Airbnb</h1>
+    <p style="line-height: 1.6;">Are you travelling to the lakeside city, Kisumu and in need of accommodation? The search is over. Enjoy this executive 3 bedroom fully furnished apartment (Airbnb) in Milimani Estate. Studio Apartments 1,2,3,4 to 5 bedroom units available.</p>
+    <p><a style="display: inline-block; background-color: #007BFF; color: white; padding: 10px 20px; margin-top: 10px; border-radius: 5px; text-decoration: none; transition: background-color 0.3s ease;" href="{% url 'airbnb' %}">Check the Airbnbs</a></p>
+</div>
+
+<div style="margin-bottom: 20px;">
+    <h1 style="font-size: 2.5em; margin-bottom: 10px;">Moving Soon?</h1>
+    <p style="line-height: 1.6;">We offer quality Mover services for you. Our services include:</p>
+    <ul>
+        {% for service in all_services_list %}
+          <li>{{ service.name }}</li>
+        {% endfor %}
+    </ul>
+    <p style="line-height: 1.6;">Our team handles your goods with care ensuring safety and reliability always. Talk to us today and get a quotation for FREE. Call: 0768305216 or book a service using the link below.</p>
+    <p><a style="display: inline-block; background-color: #007BFF; color: white; padding: 10px 20px; margin-top: 10px; border-radius: 5px; text-decoration: none; transition: background-color 0.3s ease;" href="{% url 'movers_service' %}">Book Movers Service</a></p>
+</div>
+{% endblock content %}
