@@ -4,9 +4,9 @@ from django.shortcuts import get_object_or_404
 
 from django.views.generic import ListView, TemplateView, DetailView
 
-from .models import Airbnb,Customer, OtherService, HomepageImages
+from .models import Airbnb,Customer, HomepageImages
 
-from .forms import CustomerForm, OtherServicesForm
+from .forms import CustomerForm
 
 # Create your views here.
 

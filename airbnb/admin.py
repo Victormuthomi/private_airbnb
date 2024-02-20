@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Airbnb, Customer,  Airbnbimage, OtherServicesBooking, OtherService, HomepageImages
+from .models import Airbnb, Customer,  Airbnbimage,HomepageImages
 
 # Register your models here.
 
