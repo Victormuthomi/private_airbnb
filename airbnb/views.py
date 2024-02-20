@@ -46,27 +46,6 @@ def customer_create_view(request, airbnb_id=None):
     return render(request, 'airbnb_customer_form.html', {'form': form, 'airbnb': airbnb})
 
 
-
-class OtherServicesListView(ListView):
-    """Define the model and temlate to use for the customers"""
-    model = OtherService
-    template_name = 'otherservices.html'
-    context_object_name = 'all_services_list'
-
-
-def s_customer_create_view(request):
-    if request.method == 'POST':
-        form = OtherServicesForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('booked')
-           
-    else:
-        form = OtherServicesForm()
-
-    return render(request, 'otherservices_form.html', {'form': form})
-
-
 def home(request):
     images = HomepageImages.objects.all()
     return render(request, 'home.html', {'images': images})

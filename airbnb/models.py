@@ -42,27 +42,6 @@ class Customer(models.Model):
           return  'booking number ' + str(self.booking_id) + ' user ' + self.name + ' booking airbnb ' + str(self.airbnb) + ' on ' + self.date.strftime('%d %B %Y %H:%M')
      
 
-class OtherService(models.Model):
-    """Define the different services offered"""
-    name = models.CharField(max_length=50)
-
-    def __str__(self):
-        """Show the service name"""
-        return self.name
-
-class OtherServicesBooking(models.Model):
-    """Define the other services the company offers"""
-    name = models.CharField(max_length=50)
-    phone_number = models.PositiveBigIntegerField()
-    email = models.EmailField()
-    booking_id = models.AutoField(primary_key=True)
-    service_name = models.ForeignKey(OtherService, on_delete = models.CASCADE, default = 1)
-    date = models.DateTimeField(auto_now=True)
-
-    def __str__(self):
-        """Show the cusomers name"""
-        return 'Booking no ' + str(self.booking_id) + ' user ' + self.name + ' booking ' + str(self.service_name) + ' on '  + self.date.strftime('%d %B %Y %H:%M')
-    
 class HomepageImages(models.Model):
     """Define the fields for homepage images"""
     PURPOSE_CHOICES = [
