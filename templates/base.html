@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>Kisumu Lakeside Homes</title>
-    <link rel="shortcut icon" href="{% static 'path/to/logo.ico' %}" type="image/x-icon">
+    <link rel="shortcut icon" href="{% static 'path/to/logo.jpeg' %}" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400" rel="stylesheet">
     <link href="{% static 'css/base.css' %}" rel="stylesheet">
     <!-- Add Bootstrap CSS -->
@@ -37,9 +37,13 @@
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg">
-        <a class="navbar-brand" href="{% url 'home' %}">Kisumu Lakeside Homes</a>
+        <img src="/static/homepage_images/b.jpeg" alt="Small Logo" style="height:40px;"> <!-- Adjust size as needed -->
+        <a class="navbar-brand" href="{% url 'home' %}">
+            Kisumu Lakeside Homes
+        </a>
         <!-- Add more navigation links here -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+         aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
