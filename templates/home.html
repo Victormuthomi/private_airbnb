@@ -2,28 +2,10 @@
 {% load static %}
 
 {% block content %}
-<!-- Carousel -->
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    </ol>
-    <div class="carousel-inner">
-        <div class="carousel-item active" data-interval="3000">
-            <img class="d-block w-100" src="/static/homepage_images/d.jpeg" alt="Slide 1">
-        </div>
-        <div class="carousel-item" data-interval="3000">
-            <img class="d-block w-100" src="/static/homepage_images/b.jpeg" alt="Slide 2">
-        </div>
-    </div>
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
+<!-- Images Section -->
+<div style="display: flex; justify-content: space-around; align-items: center; padding: 20px 0;">
+    <img src="/static/homepage_images/a.jpeg" alt="Slide 1" style="width: 45%; object-fit: cover; border-radius: 10px;">
+    <img src="/static/homepage_images/b.jpeg" alt="Slide 2" style="width: 45%; object-fit: cover; border-radius: 10px;">
 </div>
 
 <!-- Airbnb Section -->
@@ -45,12 +27,3 @@
 </div>
 
 {% endblock content %}
-
-{% block extra_js %}
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-    $('#carouselExampleIndicators').carousel();
-});
-</script>
-{% endblock extra_js %}
