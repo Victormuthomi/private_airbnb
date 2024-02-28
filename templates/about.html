@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- About Section -->
+<div class="container my-5">
+    <h1 class="display-4 text-center mb-4">About Kisumu Lakeside Homes</h1>
+    <p class="lead text-center">Kisumu Lakeside Homes is a premier provider of lakeside accommodations and moving services in Kisumu. Nestled in the tranquil Milimani Estate, our fully furnished apartments offer an unforgettable lakeside retreat. From intimate studios to expansive 5-bedroom units, we cater to all. Whether you're embarking on a Kisumu adventure or moving soon, let us take care of the rest!</p>
+    <div class="text-center">
+        <a class="btn btn-primary btn-lg" href="{% url 'home' %}">Learn More</a>
+    </div>
+</div>
+
+<!-- Images Section -->
+<div style="display: flex; justify-content: space-around; align-items: center; padding: 20px 0;">
+    <img src="{% static 'homepage_images/a.jpeg' %}" alt="Slide 1" style="width: 45%; object-fit: cover; border-radius: 10px;">
+    <img src="{% static 'homepage_images/b.jpeg' %}" alt="Slide 2" style="width: 45%; object-fit: cover; border-radius: 10px;">
+</div>
+{% endblock content %}

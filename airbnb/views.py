@@ -53,3 +53,11 @@ def home(request):
 class AirbnbDetailView(DetailView):
     model = Airbnb
     template_name = 'airbnb_detail.html'
+
+class AboutListView(TemplateView):
+    """Define the template to be returned after a user clicks on the about page."""
+    template_name = 'about.html'
+
+class ContactListView(TemplateView):
+    """Define the template to be returned after a user clicks on the about page."""
+    template_name = 'contact.html'

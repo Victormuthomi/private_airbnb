@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Contact Section -->
+<div class="container my-5">
+    <h1 class="display-4 text-center mb-4">Contact Us</h1>
+    <p class="lead text-center">We'd love to hear from you! Whether you have a question about our services, need assistance or have suggestions, 
+        our team is ready to help. Here's how you can reach us:</p>
+    
+    <!-- You can replace the # with your actual links -->
+    <ul>
+        <li><strong>Email:</strong> <a href="mailto:#">info@kisumulakesidehomes.com</a></li>
+        <li><strong>Phone:</strong> <a href="tel:#">+254 700 000 000</a></li>
+        <li><strong>Address:</strong> Milimani Estate, Kisumu, Kenya</li>
+    </ul>
+
+    <div class="text-center">
+        <a class="btn btn-primary btn-lg" href="{% url 'home' %}">Back to Home</a>
+    </div>
+</div>
+
+<!-- Images Section -->
+<div style="display: flex; justify-content: space-around; align-items: center; padding: 20px 0;">
+    <img src="{% static 'homepage_images/a.jpeg' %}" alt="Slide 1" style="width: 45%; object-fit: cover; border-radius: 10px;">
+    <img src="{% static 'homepage_images/b.jpeg' %}" alt="Slide 2" style="width: 45%; object-fit: cover; border-radius: 10px;">
+</div>
+{% endblock content %}
