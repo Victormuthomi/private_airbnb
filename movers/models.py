@@ -19,8 +19,6 @@ class Customer(models.Model):
     name = models.CharField(max_length=50)
     phone_number = models.PositiveBigIntegerField()
     email = models.EmailField()
-    relocate_from  = models.CharField(max_length=50)
-    relocate_to = models.CharField(max_length=50)
     booking_id = models.AutoField(primary_key=True)
     service = models.ForeignKey(Service, on_delete = models.CASCADE, default = 1)
     date = models.DateTimeField(auto_now=True)

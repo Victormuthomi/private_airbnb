@@ -11,19 +11,24 @@
 <!-- Airbnb Section -->
 <div class="container my-5">
     <h1 class="display-4 text-center mb-4">Airbnb</h1>
-    <p class="lead text-center">Embark on an unforgettable journey in Kisumu! Nestled in the tranquil Milimani Estate, our fully furnished apartments are your perfect lakeside retreat. From intimate studios (Airbnbs) to expansive 5-bedroom units, we cater to all. Dive into your Kisumu adventure and let us take care of the rest!</p>
+    <p class="lead text-center">Embark on an unforgettable journey in Kisumu! Nestled in the tranquil Milimani Estate, 
+        our fully furnished apartments are your perfect lakeside retreat. From intimate studios (Airbnbs) to expansive 5-bedroom units, 
+        we cater to all. Dive into your Kisumu adventure and let us take care of the rest!</p>
     <div class="text-center">
         <a class="btn btn-primary btn-lg" href="{% url 'airbnb' %}">Check the Airbnbs</a>
     </div>
 </div>
 
-<!-- Movers Service Section -->
+<!-- Services Section -->
 <div class="container my-5">
-    <h1 class="display-4 text-center mb-4">Moving Soon?</h1>
-    <p class="lead text-center">Explore our diverse range of moving services! Click the link below to find the perfect fit for your needs</p>
-    <div class="text-center">
-        <a class="btn btn-primary btn-lg" href="{% url 'movers_service' %}">Movers Services</a>
+    <h1 class="display-4 text-center mb-4">Moving Soon or Looking for Other Services?</h1>
+    <!-- Movers Service -->
+    <div class="my-5">
+        <p class="lead text-center">Explore our diverse range of moving and other services!
+             Click the link below to find the perfect fit for your needs.</p>
+        <div class="text-center">
+            <a class="btn btn-primary btn-lg" href="{% url 'movers_service' %}">Movers and other Services</a>
+        </div>
     </div>
-</div>
 
 {% endblock content %}
