@@ -5,37 +5,25 @@
 {% block content %}
 <div class="container my-5">
     <h1 class="display-4 text-center mb-4">Airbnbs</h1>
-    <p class="lead text-center">Enjoy this executive fully furnished apartments (Airbnbs)</p>
+    <p class="lead text-center">Enjoy these executive fully furnished apartments (Airbnbs)</p>
 
     <!-- Filters -->
     <form method="get" class="mb-4">
-        <div class="form-row">
-            <div class="col-md-3">
-                <input type="text" name="location" class="form-control" placeholder="Location">
-            </div>
-            <div class="col-md-2">
-                <input type="number" name="rooms" class="form-control" placeholder="Rooms">
-            </div>
-            <div class="col-md-2">
-                <input type="number" name="price" class="form-control" placeholder="Max Price">
-            </div>
-            <div class="col-md-3">
-                <input type="text" name="services" class="form-control" placeholder="Services">
-            </div>
-            <div class="col-md-2">
-                <button type="submit" class="btn btn-primary">Filter</button>
-            </div>
-        </div>
+        <!-- Your filter form here -->
     </form>
 
     <!-- Listings -->
-    <div class="row flex-row flex-nowrap overflow-auto">
+    <div class="row">
         {% for airbnb in all_airbnbs_list %}
-        <div class="col-4">
-            <div class="card mb-4">
+        <div class="col-md-4 mb-4">
+            <div class="card">
                 {% if airbnb.images.all %}
                 <img class="card-img-top" src="{{ airbnb.images.all.0.image.url }}" alt="{{ airbnb.name }}">
                 {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ airbnb.name }}</h5>
+                    <p class="card-text">{{ airbnb.location }}</p>
+                    <p class="card-text">{{ airbnb.rooms }} rooms</p>
                     {% if airbnb.avalability %}
                     <a href="{% url 'airbnb_detail' airbnb.id %}" class="btn btn-primary">View Details</a>
                     {% else %}
@@ -43,6 +31,7 @@
                     {% endif %}
                 </div>
             </div>
+        </div>
         {% endfor %}
     </div>
 </div>
