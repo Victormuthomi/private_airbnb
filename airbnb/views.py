@@ -61,3 +61,7 @@ class AboutListView(TemplateView):
 class ContactListView(TemplateView):
     """Define the template to be returned after a user clicks on the about page."""
     template_name = 'contact.html'
+
+class PrivacyListView(TemplateView):
+    """Define the template to be returned after a user clicks on the privacy link."""
+    template_name = 'privacy.html'
