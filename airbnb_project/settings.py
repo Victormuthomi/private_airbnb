@@ -156,7 +156,8 @@ from django.conf import settings
 # Example: "/var/www/example.com/media/"
 # settings.py
 # settings.py
-MEDIA_ROOT = '/tmp'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 
 
